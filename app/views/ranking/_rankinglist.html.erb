@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% items.each do |item| %>
+    
+      <div class="item-box">
+          <%= items.index(item) + 1 %>位
+          <% if action == "Have" %>
+              （<%= item.haves.count %>人）
+          <% elsif action == "Want" %>
+              （<%= item.wants.count %>人）
+          <% end %>
+        <%= render 'items/item_img' , item: item %>
+      </div>
+    <% end %>
+  </div>
+</div>
